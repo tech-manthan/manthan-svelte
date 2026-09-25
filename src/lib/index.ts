@@ -19,6 +19,7 @@ export { default as Checkbox } from './components/Checkbox.svelte';
 export { default as Combobox } from './components/Combobox.svelte';
 export { default as Command } from './components/Command.svelte';
 export { default as CommandDialog } from './components/CommandDialog.svelte';
+export { default as DataTable } from './components/DataTable.svelte';
 export { default as DatePicker } from './components/DatePicker.svelte';
 export { default as Dialog } from './components/Dialog.svelte';
 export { default as Field } from './components/Field.svelte';

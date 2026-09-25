@@ -45,7 +45,7 @@ Set the style on `<html data-mn-style="clay" data-mn-theme="system">`: `default`
 | Navigation | `Tabs` (+ `TabsList`, `TabsTrigger`, `TabsContent`), `Accordion` + `AccordionItem`, `Breadcrumb`, `Pagination` (`bind:page`) |
 | Overlays | `Dialog` (`bind:open`, `placement` for drawers), `Popover`, `Menu` (+ `MenuItem`, `MenuLabel`, `MenuSeparator`), `Tooltip`, `Toaster` + `toast()` |
 | Feedback | `Alert`, `Progress`, `ProgressCircle`, `Spinner`, `Skeleton` |
-| Advanced | `Combobox` (`bind:value`, filtering, groups), `Command` + `CommandDialog` (⌘K, `bind:open`), `Calendar`, `DatePicker` (ISO `YYYY-MM-DD`, `name` for forms), `ToggleGroup` + `ToggleGroupItem` |
+| Advanced | `DataTable` (sort, search, `bind:selected`, pagination, `cell` snippet), `Combobox` (`bind:value`, filtering, groups), `Command` + `CommandDialog` (⌘K, `bind:open`), `Calendar`, `DatePicker` (ISO `YYYY-MM-DD`, `name` for forms), `ToggleGroup` + `ToggleGroupItem` |
 
 Recipes and helpers from `@manthan/base` are re-exported. Works in SvelteKit (SSR-safe ids via `$props.id()`).
 
