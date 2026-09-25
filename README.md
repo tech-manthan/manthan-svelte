@@ -35,6 +35,26 @@ npm i @manthan/svelte @manthan/base @manthan/icons tailwindcss
 
 Set the style on `<html data-mn-style="clay" data-mn-theme="system">`: `default`, `glass`, `neu`, `brutal`, `material`, `fluent`, `clay`, `retro`, `neon`, `minimal`, `skeuo`.
 
+## Forms
+
+```svelte
+<script lang="ts">
+  import { useForm, rules, Field, Input, Checkbox, FileUpload, Button } from '@manthan/svelte';
+  const form = useForm({
+    initialValues: { email: '', terms: false },
+    rules: { email: [rules.required(), rules.email()], terms: rules.required('Accept the terms.') },
+    onSubmit: async (values) => save(values),
+  });
+</script>
+
+<form onsubmit={form.handleSubmit}>
+  <Field label="Email" error={form.errors.email}><Input {...form.register('email')} /></Field>
+  <Checkbox label="I agree" {...form.registerCheckbox('terms')} />
+  <FileUpload name="avatar" accept="image/*" maxSize={2_000_000} />
+  <Button type="submit" loading={form.submitting}>Save</Button>
+</form>
+```
+
 ## Components
 
 | Group | Components |
@@ -45,7 +65,7 @@ Set the style on `<html data-mn-style="clay" data-mn-theme="system">`: `default`
 | Navigation | `Tabs` (+ `TabsList`, `TabsTrigger`, `TabsContent`), `Accordion` + `AccordionItem`, `Breadcrumb`, `Pagination` (`bind:page`) |
 | Overlays | `Dialog` (`bind:open`, `placement` for drawers), `Popover`, `Menu` (+ `MenuItem`, `MenuLabel`, `MenuSeparator`), `Tooltip`, `Toaster` + `toast()` |
 | Feedback | `Alert`, `Progress`, `ProgressCircle`, `Spinner`, `Skeleton` |
-| Advanced | `DataTable` (sort, search, `bind:selected`, pagination, `cell` snippet), `Combobox` (`bind:value`, filtering, groups), `Command` + `CommandDialog` (⌘K, `bind:open`), `Calendar`, `DatePicker` (ISO `YYYY-MM-DD`, `name` for forms), `ToggleGroup` + `ToggleGroupItem` |
+| Advanced | `FileUpload` (`bind:files`, drag and drop, paste, type/size/count checks), `useForm`, `DataTable` (sort, search, `bind:selected`, pagination, `cell` snippet), `Combobox` (`bind:value`, filtering, groups), `Command` + `CommandDialog` (⌘K, `bind:open`), `Calendar`, `DatePicker` (ISO `YYYY-MM-DD`, `name` for forms), `ToggleGroup` + `ToggleGroupItem` |
 
 Recipes and helpers from `@manthan/base` are re-exported. Works in SvelteKit (SSR-safe ids via `$props.id()`).
 
