@@ -24,6 +24,8 @@ export { default as DatePicker } from './components/DatePicker.svelte';
 export { default as Dialog } from './components/Dialog.svelte';
 export { default as Field } from './components/Field.svelte';
 export { default as FileUpload } from './components/FileUpload.svelte';
+export { default as Chart } from './components/Chart.svelte';
+export { default as Stat } from './components/Stat.svelte';
 export { default as Heading } from './components/Heading.svelte';
 export { default as Icon } from './components/Icon.svelte';
 export { default as Input } from './components/Input.svelte';

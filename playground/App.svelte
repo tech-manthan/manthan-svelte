@@ -1,6 +1,11 @@
 <script lang="ts">
   import { Mail, Settings, Trash, User, LogOut } from '@manthan/icons';
+  const trend = [31, 33, 32, 36, 35, 38, 41, 40, 43, 44, 46, 48];
+  const finance = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'].map((month, i) => ({ month, revenue: 30 + i * 3 + (i % 2) * 2, costs: 22 + i }));
+  const financeSeries = [{ key: 'revenue', label: 'Revenue' }, { key: 'costs', label: 'Costs' }];
   import {
+    Chart,
+    Stat,
     Accordion, AccordionItem, Alert, Avatar, Badge, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,
     Checkbox, Dialog, designStyles, Field, Heading, Icon, Input, Menu, MenuItem, MenuLabel, MenuSeparator, Pagination, Popover,
     Progress, ProgressCircle, Radio, RadioGroup, Select, Slider, Switch, Tabs, TabsContent, TabsList, TabsTrigger, toast, Toaster, Tooltip,
@@ -90,4 +95,8 @@
   </Accordion>
   <Pagination bind:page total={12} />
   <Toaster />
+  <div class="grid gap-6 md:grid-cols-3">
+    <Card><Stat label="Revenue" value="$48.2K" delta="+12.4%" sentiment="positive" caption="vs last month" {trend} /></Card>
+    <Card class="md:col-span-2"><Chart type="area" title="Revenue vs costs" data={finance} x="month" series={financeSeries} /></Card>
+  </div>
 </main>
