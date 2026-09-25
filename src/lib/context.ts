@@ -65,3 +65,11 @@ export const initials = (name = '') =>
     .slice(0, 2)
     .map((w) => w[0]!.toUpperCase())
     .join('');
+
+export interface ToggleGroupContext {
+  isPressed(value: string): boolean;
+  toggle(value: string): void;
+  readonly itemClass: string;
+  readonly disabled: boolean | undefined;
+}
+export const toggleGroupContext = context<ToggleGroupContext>('mn-toggle-group');
