@@ -12,5 +12,5 @@
     "ignoreDeprecations": "6.0",
     "types": ["svelte", "vite/client"]
   },
-  "include": ["src", "test", "playground"]
+  "include": ["src", "test", "playground", "demos"]
 }
