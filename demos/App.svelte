@@ -6,7 +6,11 @@
 </script>
 
 {#if Demo}
-  <Demo {...demoProps[slug!]}>Click me</Demo>
+  {#if slug === 'button'}
+    <Demo {...demoProps[slug]}>Click me</Demo>
+  {:else}
+    <Demo {...demoProps[slug!]} />
+  {/if}
 {:else}
   <p>Demo not found for "{slug}".</p>
 {/if}
