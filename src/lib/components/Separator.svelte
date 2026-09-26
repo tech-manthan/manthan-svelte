@@ -1,10 +1,11 @@
 <script lang="ts">
   import { separator } from '@manthan/base';
-  let {
-    orientation = 'horizontal',
-    decorative = true,
-    class: className,
-  }: { orientation?: 'horizontal' | 'vertical'; decorative?: boolean; class?: string } = $props();
+  interface Props {
+    orientation?: 'horizontal' | 'vertical';
+    decorative?: boolean;
+    class?: string;
+  }
+  let { orientation = 'horizontal', decorative = true, class: className }: Props = $props();
 </script>
 
 <div
